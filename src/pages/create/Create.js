@@ -15,7 +15,7 @@ const Create = () => {
 
     let navigate = useNavigate();
 
-    const { postData, data, error } = useFetch('http://localhost:3000/recipes', 'POST')
+    const { postData, data} = useFetch('http://localhost:3000/recipes', 'POST')
   
     const handleSubmit = (e) => {
       e.preventDefault()
@@ -37,7 +37,7 @@ const Create = () => {
         if(data){
             navigate('/')
         }
-    },[data])
+    },[data, navigate])
 
   return (
     <div className="create">
